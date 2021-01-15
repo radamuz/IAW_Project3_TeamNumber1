@@ -2,9 +2,9 @@
   "name": "iaw_project3_teamnumber1",
   "version": "1.0.0",
   "description": "Es una prueba de fork",
-  "main": "index.js",
+  "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/carlosaguilar1993/IAW_Project3_TeamNumber1/issues"
   },
-  "homepage": "https://github.com/carlosaguilar1993/IAW_Project3_TeamNumber1#readme"
+  "homepage": "https://github.com/carlosaguilar1993/IAW_Project3_TeamNumber1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
