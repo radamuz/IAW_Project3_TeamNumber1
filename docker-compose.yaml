@@ -3,6 +3,7 @@ services:
   app:
     container_name: 'restaurants'
     restart: always
+    volumes: ['./:/usr/src/app']
     build: .
     ports:
       - '80:5000'
@@ -11,9 +12,11 @@ services:
   mongo:
     container_name: 'mongodb'
     image: mongo
+    volumes: ['./db:/docker-entrypoint-initdb.d/']
     ports:
       - '27017:27017'
     environment:
+      MONGO_INITDB_DATABASE: restaurantsdb
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: Alumne1234*
   mongo-express:
