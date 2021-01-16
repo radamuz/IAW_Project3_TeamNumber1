@@ -1,17 +1,18 @@
 {
   "name": "iaw_project3_teamnumber1",
   "version": "1.0.0",
-  "description": "Es una prueba de fork",
-  "main": "test.js",
+  "description": "We must create a web application of a restaurants guide, with a search engine and restaurants ratings, with Node.js, Express.js and MongoDB technologies, deployed using Docker.",
+  "main": "index.js",
   "scripts": {
-    "start": "node test.js",
-    "dev": "nodemon test.js"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carlosaguilar1993/IAW_Project3_TeamNumber1.git"
   },
-  "author": "Team3",
+  "keywords": [],
+  "author": "Raúl Adamuz, Carlos Aguilar, Jordi Álvarez",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/carlosaguilar1993/IAW_Project3_TeamNumber1/issues"
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/carlosaguilar1993/IAW_Project3_TeamNumber1#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
