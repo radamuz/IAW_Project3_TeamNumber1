@@ -38,7 +38,7 @@ sudo apt install node
 sudo apt install npm
 ```
 
-* EASY MODE (install all dependencies automatically)
+* Install all dependencies automatically
 ```js
 npm install
 ```
@@ -55,11 +55,6 @@ docker-compose down
 ```
 
 * Then we will start the server in normal mode:
-```js
-npm run start
-```
-
-* To enter the MongoDB database shell with an interactive terminal:
 ```js
 npm run start
 ```
