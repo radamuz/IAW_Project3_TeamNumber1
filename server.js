@@ -1,8 +1,24 @@
 const express = require('express');
-const exphbs = require('express-handlebars')
+const exphbs = require('express-handlebars');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+//const MongoStore = require('connect-mongo')()
+const connectDB = require('./config/db');
 const path = require('path');
 
+
+// Load Config
+dotenv.config({path: './config/config.env'})
+
+//Connect to the MongoDb
+connectDB()
+
 const app = express();
+
+if(process.env.NODE_ENV ==='development'){
+    app.use(morgan('dev'))
+}
+
 
 app.use(express.static(path.join(__dirname, 'public')))
 /*app.get('/', function(req, res) {
