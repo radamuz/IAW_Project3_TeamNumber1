@@ -24,6 +24,6 @@ services:
     restart: always
     ports:
       - 81:8081
-    environment:
+    #environment:
       #ME_CONFIG_MONGODB_ADMINUSERNAME: root
       #ME_CONFIG_MONGODB_ADMINPASSWORD: Alumne1234*
