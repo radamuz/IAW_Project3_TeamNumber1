@@ -38,19 +38,9 @@ sudo apt install node
 sudo apt install npm
 ```
 
-* EASY MODE (install all dependencies automatically)
+* Install all dependencies automatically
 ```js
 npm install
-```
-
-* To start server.js it is necessary to have installed the express.js module of node.js.
-```js
-npm install express
-```
-
-* To develop the application we will need the nodemon module so that we do not have to restart the server every time we make a change to it
-```js
-npm install nodemon
 ```
 
 ## Init
@@ -59,17 +49,28 @@ npm install nodemon
 docker-compose up -d
 ```
 
+* Stop the containers 
+```bash
+docker-compose down
+```
+
 * Then we will start the server in normal mode:
 ```js
 npm run start
 ```
 
-* Or we can choose to start it in developer mode so that it updates with each change we make to the code:
+## Interactive terminal
+* To enter the MongoDB database shell with an interactive terminal:
 ```js
-npm run dev
+docker exec -it mongodb mongo -u root -p Alumne1234*
 ```
 
-* Stop the containers 
-```bash
-docker-compose down
+* To enter to node container with an interactive terminal:
+```js
+docker exec -it node bash
+```
+
+* To enter to other container with an interactive terminal:
+```js
+docker exec -it <containerID> bash
 ```
