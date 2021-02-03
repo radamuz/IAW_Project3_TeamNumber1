@@ -4,8 +4,8 @@
   "description": "We must create a web application of a restaurants guide, with a search engine and restaurants ratings, with Node.js, Express.js and MongoDB technologies, deployed using Docker.",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "cross-env NODE_ENV=production node server",
+    "dev": "cross-env NODE_ENV=development nodemon server"
   },
   "repository": {
     "type": "git",
