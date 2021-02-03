@@ -1,4 +1,4 @@
-db.restaurant.insertOne({
+db.restaurants.insertOne({
     name: 'Hostelería Dromedarios',
     forks: '5',
     foods: ['ensalada cesar', 'spaguetis carbonara', 'pescaíto frito', 'kebab', 'tostadas'],
@@ -21,7 +21,7 @@ db.restaurant.insertOne({
     ]
   })
 
-  db.restaurant.insertMany([
+  db.restaurants.insertMany([
     {
         name: 'La Casa del Goloso',
         forks: '4',
