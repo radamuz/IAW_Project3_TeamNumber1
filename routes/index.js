@@ -26,6 +26,11 @@ router.get('/about', (req, res) => {
     res.render('about')
 })
 
+//desc About Page
+router.get('/contact', (req, res) => {
+    res.render('contact')
+})
+
 
 
 
