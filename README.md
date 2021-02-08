@@ -59,6 +59,7 @@ docker-compose down
 npm run start
 ```
 
+## Interactive terminal
 * To enter the MongoDB database shell with an interactive terminal:
 ```js
 docker exec -it mongodb mongo -u root -p Alumne1234*

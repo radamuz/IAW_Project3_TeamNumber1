@@ -1,16 +1,35 @@
 const express = require('express')
 const router = express.Router()
+const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-//desc Login/Landin page
-//@route get /
-router.get('/', (req, res) => {
-    res.render('home')
+const Restaurant = require('../models/restaurant')
+
+// @desc    Login/Landing page
+
+// @route   GET /dashboard
+router.get('/', ensureGuest, async (req, res) => {
+  try {
+    const restaurants = await Restaurant.find().lean()
+    res.render('home', {
+        restaurants
+    })
+    console.log(restaurants)
+  } catch (err) {
+    console.error(err)
+    res.render('error/500')
+  }
 })
 
-//desc Dashboard
-//@route get /dashboard
-/*router.get('/dashboard', (req, res) => {
-    res.render('dashboard')
-})*/
+
+// @route   GET /
+router.get('/admin', (req, res) => {
+  res.render('login', {
+    layout: 'login',
+  })
+})
+
+// @desc    Dashboard
+// @route   GET /dashboard
+
 
 module.exports = router
