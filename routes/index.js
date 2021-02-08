@@ -21,6 +21,16 @@ router.get('/', async (req, res) => {
 
     
 })
+const aa = await Restaurant.aggregate([
+    { 
+        $project: {
+             quizAvg: { $avg: "$comments.stars"}
+             
+             }
+ 
+     }
+ ]).lean()
+ console.log(aa);
 //desc About Page
 router.get('/about', (req, res) => {
     res.render('about')
