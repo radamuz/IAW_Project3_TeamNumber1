@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
 
-//desc Login/Landin page
+//desc Home Page
 //@route get /
 router.get('/', async (req, res) => {
     try {
@@ -21,6 +21,17 @@ router.get('/', async (req, res) => {
 
     
 })
+//desc About Page
+router.get('/about', (req, res) => {
+    res.render('about')
+})
+
+//desc About Page
+router.get('/contact', (req, res) => {
+    res.render('contact')
+})
+
+
 
 
 
