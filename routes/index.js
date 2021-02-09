@@ -17,7 +17,21 @@ router.get('/', async (req, res) => {
          
              }
          ])
-        console.log(aa)
+        // for (let i = 0; i < restaurants.length; i++) {
+        //     // console.log(aa[i].stars);
+        //     // restaurants.push(aa[i].stars);
+        //      //console.log(restaurants[i]);
+        //     var str = aa[i].stars;
+        //     //console.log(str);
+        //     var str2 = 'stars: '+ str;
+        //     //console.log(str2);
+        //     var str3 = restaurants[i];
+        //     str3.push(str2);
+        //     //console.log(str3);  
+        // }
+        // restaurants.forEach(i => {
+        //     console.log(i);
+        // });
         
         
         res.render('home', {
