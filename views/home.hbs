@@ -12,9 +12,14 @@
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></span>
       <p>Address: {{address.streetAddress}}</p>
-      <p>Price Index: {{price}}</p>
-      <p>Price Index: {{price}}</p>
+      <p>Phone: {{phone}}</p>
+      <p>Price: {{price}}</p>
+      {{#each ../aa}}
+      <p>Clients Average: {{stars}}</p>
+      {{/each}}
     </div>
   </div>
   {{/each}}
+  
+  
     
