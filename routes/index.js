@@ -8,34 +8,25 @@ router.get('/', async (req, res) => {
     try {
         const restaurants = await Restaurant.find().sort({forks:-1}).limit(5).lean()
 
-        const aa = await Restaurant.aggregate([
+        const avgComments = await Restaurant.aggregate([
             { 
                 $project: {
                      stars: { $avg: "$comments.stars"}
-                     
                      }
-         
              }
          ])
-        // for (let i = 0; i < restaurants.length; i++) {
-        //     // console.log(aa[i].stars);
-        //     // restaurants.push(aa[i].stars);
-        //      //console.log(restaurants[i]);
-        //     var str = aa[i].stars;
-        //     //console.log(str);
-        //     var str2 = 'stars: '+ str;
-        //     //console.log(str2);
-        //     var str3 = restaurants[i];
-        //     str3.push(str2);
-        //     //console.log(str3);  
-        // }
-        // restaurants.forEach(i => {
-        //     console.log(i);
-        // });
-        
+
+        for (let i = 0; i < restaurants.length; i++) {
+            const forRestaurant = restaurants[i];
+            // console.log(forRestaurant);
+            const forAvgComment = avgComments[i]
+            forRestaurant.stars = forAvgComment.stars
+            // console.log(forRestaurant.stars);
+            console.log(forRestaurant);
+        }
         
         res.render('home', {
-            restaurants,aa
+            restaurants,avgComments
         })
     } catch (error) {
         console.error(error)
