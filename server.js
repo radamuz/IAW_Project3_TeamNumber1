@@ -5,8 +5,8 @@ const morgan = require('morgan');
 const passport = require('passport')
 const session = require('express-session')
 //const MongoStore = require('connect-mongo')()
-const passport = require('passport');
-const session = require('express-session');
+//const passport = require('passport');
+//const session = require('express-session');
 const connectDB = require('./config/db');
 const path = require('path');
 
@@ -14,11 +14,7 @@ const path = require('path');
 // Load Config
 dotenv.config({path: './config/config.env'})
 
-<<<<<<< HEAD
-//Passport config
-=======
 // Passport config
->>>>>>> ed0829f4d006808b6fde6a1f26bc288323f66433
 require('./config/passport')(passport)
 
 //Connect to the MongoDb
@@ -54,6 +50,12 @@ app.use(session({
 // Passport Middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
+// Set global var
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null
+  next()
+})
 
 //Routes
 app.use('/', require('./routes/index'))

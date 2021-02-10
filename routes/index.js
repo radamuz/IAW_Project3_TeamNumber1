@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
+const { ensureAuth, ensureGuest } = require('../middelware/auth')
 
 //@desc Home Page
 //@route get /
@@ -37,20 +38,8 @@ router.get('/', async (req, res) => {
     
 })
 
-<<<<<<< HEAD
-//desc Login Page
-router.get('/login', (req, res) => {
-    res.render('login', {
-        layout: 'login',
-    })
-})
-
-
-//desc About Page
-=======
 //@desc About Page
 //@route get /about
->>>>>>> ed0829f4d006808b6fde6a1f26bc288323f66433
 router.get('/about', (req, res) => {
     res.render('about')
 })
@@ -63,9 +52,16 @@ router.get('/contact', (req, res) => {
 
 //@desc Login Page
 //@route get /login
-router.get('/login', (req, res) => {
+router.get('/login', ensureGuest, (req, res) => {
     res.render('login', {
         layout: 'login'
+    })
+})
+
+//@route get /admin
+router.get('/admin', ensureAuth, (req, res) => {
+    res.render('admin', {
+        layout: 'admin'
     })
 })
 
