@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
              }
          ])
 
+        // Enter average comments in each of the restaurants
         for (let i = 0; i < restaurants.length; i++) {
             const forRestaurant = restaurants[i];
             // console.log(forRestaurant);
