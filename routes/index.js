@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
 
-//desc Home Page
+//@desc Home Page
 //@route get /
 router.get('/', async (req, res) => {
     try {
@@ -37,19 +37,19 @@ router.get('/', async (req, res) => {
     
 })
 
-//desc About Page
+//@desc About Page
 //@route get /about
 router.get('/about', (req, res) => {
     res.render('about')
 })
 
-//desc Contact Page
+//@desc Contact Page
 //@route get /contact
 router.get('/contact', (req, res) => {
     res.render('contact')
 })
 
-//desc Login Page
+//@desc Login Page
 //@route get /login
 router.get('/login', (req, res) => {
     res.render('login', {
