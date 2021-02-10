@@ -36,4 +36,4 @@ app.set('view engine', '.hbs');
 //Routes
 app.use('/', require('./routes/index'))
 
-app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT} and running in ${process.env.NODE_ENV} mode`));
