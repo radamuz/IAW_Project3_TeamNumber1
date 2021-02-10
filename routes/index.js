@@ -19,11 +19,10 @@ router.get('/', async (req, res) => {
         // Enter average comments in each of the restaurants
         for (let i = 0; i < restaurants.length; i++) {
             const forRestaurant = restaurants[i];
-            // console.log(forRestaurant);
+
             const forAvgComment = avgComments[i]
+
             forRestaurant.stars = forAvgComment.stars
-            // console.log(forRestaurant.stars);
-            console.log(forRestaurant);
         }
         
         res.render('home', {
@@ -39,16 +38,22 @@ router.get('/', async (req, res) => {
 })
 
 //desc About Page
+//@route get /about
 router.get('/about', (req, res) => {
     res.render('about')
 })
 
-//desc About Page
+//desc Contact Page
+//@route get /contact
 router.get('/contact', (req, res) => {
     res.render('contact')
 })
 
-
+//desc Login Page
+//@route get /login
+router.get('/login', (req, res) => {
+    res.render('login')
+})
 
 
 

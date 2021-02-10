@@ -15,15 +15,14 @@ connectDB()
 
 const app = express();
 
+// Logging
 if(process.env.NODE_ENV ==='development'){
     app.use(morgan('dev'))
 }
 
 
 app.use(express.static(path.join(__dirname, 'public')))
-/*app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});*/
+
 
 const PORT = process.env.PORT || 5000;
 
