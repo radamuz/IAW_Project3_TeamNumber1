@@ -17,21 +17,15 @@ router.get('/', async (req, res) => {
          
              }
          ])
-        // for (let i = 0; i < restaurants.length; i++) {
-        //     // console.log(aa[i].stars);
-        //     // restaurants.push(aa[i].stars);
-        //      //console.log(restaurants[i]);
-        //     var str = aa[i].stars;
-        //     //console.log(str);
-        //     var str2 = 'stars: '+ str;
-        //     //console.log(str2);
-        //     var str3 = restaurants[i];
-        //     str3.push(str2);
-        //     //console.log(str3);  
-        // }
-        // restaurants.forEach(i => {
-        //     console.log(i);
-        // });
+         for (let i = 0; i < restaurants.length; i++) {
+        
+            const element = restaurants[i];
+            const element2 = aa[i];
+            element.stars = element2.stars;
+            console.log(element);
+        
+        } 
+        
         
         
         res.render('home', {
@@ -45,6 +39,14 @@ router.get('/', async (req, res) => {
 
     
 })
+
+//desc Login Page
+router.get('/login', (req, res) => {
+    res.render('login', {
+        layout: 'login',
+    })
+})
+
 
 //desc About Page
 router.get('/about', (req, res) => {
