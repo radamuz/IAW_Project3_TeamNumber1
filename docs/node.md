@@ -12,3 +12,12 @@ npm install nodemon
 ```js
 npm run dev
 ```
+
+* The dependencies that we have used of node are the following:
+```js
+npm i express mongoose connect-mongo express-session express-handlebars dotenv method-override moment morgan passport passport-google-oauth20
+```
+```js
+npm i -D nodemon cross-env
+```
+
