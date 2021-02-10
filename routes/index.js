@@ -57,6 +57,14 @@ router.get('/login', (req, res) => {
     })
 })
 
+//@desc Admin Page
+//@route get /admin
+router.get('/admin', (req, res) => {
+    res.render('admin', {
+        layout: 'admin'
+    })
+})
+
 
 
 module.exports = router
