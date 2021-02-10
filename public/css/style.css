@@ -1,29 +1,29 @@
-.logo{
+.logo {
     float: left;
     width: 70px;
     height: 75px;
 }
 
-.img{
+.img {
     width: 100%;
     height: 500px;
 }
 
-.contact{
-    margin-top: 52px;
+.contact {
+    margin-top: 20px;
 }
 
-.footer-end{
+.footer-end {
     padding-bottom: 10px;
     font-size: .75rem;
 }
 
-._11-OM{
+._11-OM {
     width: 10rem;
     margin-bottom: 16px;
 }
 
-.list{
+.list {
     flex-basis: 66.66667%;
     padding: 0;
     display: block;
@@ -33,7 +33,7 @@
     text-size-adjust: 100%;
 }
 
-.list-ul{
+.list-ul {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -43,7 +43,7 @@
     color: #fff;
 }
 
-.list-li{
+.list-li {
     width: 50%;
     box-sizing: inherit;
     background-repeat: no-repeat;
@@ -62,13 +62,14 @@
     box-sizing: inherit;
     background-repeat: no-repeat;
 }
-.list-li a{
+
+.list-li a {
     padding: 6px;
     color: #fff;
     text-align: left;
 }
 
-.adjust{
+.adjust {
     height: 50px;
 }
 
@@ -76,17 +77,24 @@
     padding: 20px;
 }
 
-.pad{
+.pad {
     padding-top: 220px;
     padding-bottom: 0px;
 }
 
-.login-container{
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
+.login-container {
     width: 400px;
-    margin-top: 50px;
     text-align: center;
 }
 
-p{
+.login-container p {
     margin: 10px 0 !important;
 }
