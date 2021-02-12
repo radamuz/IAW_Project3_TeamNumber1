@@ -1,12 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
+const { ensureAuth, ensureGuest } = require('../middelware/auth')
 
 //@desc Home Page
 //@route get /
 router.get('/', async (req, res) => {
     try {
         const restaurants = await Restaurant.find().sort({forks:-1}).limit(5).lean()
+        console.log(restaurants)
 
         const avgComments = await Restaurant.aggregate([
             { 
@@ -51,16 +53,16 @@ router.get('/contact', (req, res) => {
 
 //@desc Login Page
 //@route get /login
-router.get('/login', (req, res) => {
+router.get('/login', ensureGuest, (req, res) => {
     res.render('login', {
         layout: 'login'
     })
 })
 
+
 //@desc Admin Page
 //@route get /admin
-// router.get('/admin', ensureAuth, (req, res) => {
-router.get('/admin', (req, res) => {
+router.get('/admin', ensureAuth, (req, res) => {
     res.render('admin', {
         layout: 'admin'
     })

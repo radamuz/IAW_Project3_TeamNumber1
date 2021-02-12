@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const passport = require('passport')
 const session = require('express-session')
 //const MongoStore = require('connect-mongo')()
+//const passport = require('passport');
+//const session = require('express-session');
 const connectDB = require('./config/db');
 const path = require('path');
 
@@ -44,9 +46,16 @@ app.use(session({
     saveUninitialized: false
   }))
 
-// Passport middleware
+
+// Passport Middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
+// Set global var
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null
+  next()
+})
 
 //Routes
 app.use('/', require('./routes/index'))
