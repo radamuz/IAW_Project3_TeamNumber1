@@ -8,7 +8,6 @@ const { ensureAuth, ensureGuest } = require('../middelware/auth')
 router.get('/', async (req, res) => {
     try {
         const restaurants = await Restaurant.find().sort({forks:-1}).limit(5).lean()
-        console.log(restaurants)
 
         const avgComments = await Restaurant.aggregate([
             { 
