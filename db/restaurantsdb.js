@@ -6,17 +6,19 @@ db.users.insertMany([{
         firstName: 'Raul',
         lastName: 'Adamuz Cano',
         image: 'https://lh3.googleusercontent.com/a-/AOh14Gg0sqaxJa8u6B3ulGATrR5nYkKBtK9vbNS_XdEF=s96-c',
+        linkedIn: 'https://www.linkedin.com/in/raul-adamuz/',
         createdAt: ISODate('2021-02-10T11:47:32.058Z'),
         __v: 0
     },
     {
         _id: ObjectId('60269ae67d66ab1f2f4ec27f'),
         googleId: '112370529522259360058',
-        admin: false,
+        admin: true,
         displayName: 'Jordi Ramon Alvarez Rebassa',
         firstName: 'Jordi Ramon',
         lastName: 'Alvarez Rebassa',
         image: 'https://lh3.googleusercontent.com/a-/AOh14Gio31n6ZunRG-UvMJ1KrQy2h4KCy0jhPna8krqv=s96-c',
+        linkedIn: 'https://www.linkedin.com/in/jordi-alvarez-rebassa/',
         createdAt: ISODate('2021-02-12T15:12:38.429Z'),
         __v: 0
     }, {
@@ -27,6 +29,7 @@ db.users.insertMany([{
         firstName: 'Carlos',
         lastName: 'Aguilar Illas',
         image: 'https://lh3.googleusercontent.com/a-/AOh14GgPv1M3TaD_AQDTjo0qI0iZPAdnhmmPz6niEWUJ=s96-c',
+        linkedIn: 'https://www.linkedin.com/in/carlos-aguilar-illas/',
         createdAt: ISODate('2021-02-12T15:13:47.720Z'),
         __v: 0
     }

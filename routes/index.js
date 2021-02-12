@@ -50,7 +50,7 @@ router.get('/', async (req, res) => {
 router.get('/about', async (req, res) => {
 
     try {
-        const imagesArray = await Images.find({}).lean()
+        const imagesArray = await Images.find({ admin:true }).lean()
         res.render('about', {
             imagesArray
         })
