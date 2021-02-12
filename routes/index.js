@@ -59,6 +59,8 @@ router.get('/login', ensureGuest, (req, res) => {
     })
 })
 
+
+//@desc Admin Page
 //@route get /admin
 router.get('/admin', ensureAuth, (req, res) => {
     res.render('admin', {

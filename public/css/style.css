@@ -69,6 +69,12 @@
     text-align: left;
 }
 
+.list-li-back a {
+    padding: 6px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
 .adjust {
     height: 50px;
 }

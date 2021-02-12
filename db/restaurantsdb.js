@@ -1,3 +1,15 @@
+db.users.insertMany([{
+    _id: ObjectId('6023c7d41b1dbb94a6cf6eb7'),
+    googleId: '112623209788304607675',
+    admin: true,
+    displayName: 'Raul Adamuz Cano',
+    firstName: 'Raul',
+    lastName: 'Adamuz Cano',
+    image: 'https://lh3.googleusercontent.com/a-/AOh14Gg0sqaxJa8u6B3ulGATrR5nYkKBtK9vbNS_XdEF=s96-c',
+    createdAt: ISODate('2021-02-10T11:47:32.058Z'),
+    __v: 0
+}])
+
 db.restaurants.insertMany([{
         name: 'Hostelería Dromedarios',
         forks: '5',
