@@ -2,10 +2,30 @@
 <h4>We are the best Restaurant Guide in the world</h4>
 
 <h5>History</h5>
-<p>YankeesFork was born in the year 2021, we are a team of developers that are constantly growing. We have created this app to help people find the best restaurant in their area so that they can enjoy the best evening possible.</p>
+<p>YankeesFork was born in the year 2021, we are a team of developers that are constantly growing. We have created this
+    app to help people find the best restaurant in their area so that they can enjoy the best evening possible.</p>
 
 <h5>Mission</h5>
-<p>That our App is useful for all users such as restaurant owners and their potential diners. In our App, restaurant owners can register their restaurant, and publish all kinds of offers so that people can see it.</p>
+<p>That our App is useful for all users such as restaurant owners and their potential diners. In our App, restaurant
+    owners can register their restaurant, and publish all kinds of offers so that people can see it.</p>
 
 <h5>Our values</h5>
-<p class="margin-bottom">Transparency, Honesty, Consistency, Freedom, Punctuality in service, Excellence, Adaptability, Diligence, Constancy, Justice, Closeness</p>
+<p class="margin-bottom">Transparency, Honesty, Consistency, Freedom, Punctuality in service, Excellence, Adaptability,
+    Diligence, Constancy, Justice, Closeness</p>
+
+<div class="row">
+{{#each imagesArray}}
+    <div class="col s12 m7" style="width: 33%;">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{image}}">
+                <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+            </div>
+        </div>
+    </div>
+{{/each}}
+</div>
