@@ -19,12 +19,21 @@ router.post('/', ensureAuth, async (req, res) => {
         //req.body.user = req.user.id
         const a = req.body.foods
         const splited = a.split(', ')
+        const serv = req.body.services
+        const servSplited = serv.split(', ')
+        //console.log(req.body);
+        const adres = new Object()
+        adres.addressLocality = req.body.addressLocality
+        adres.addressRegion = req.body.addressRegion
+        adres.postalCode = req.body.postalCode
+        adres.streetAddress = req.body.streetAddress
         req.body.foods = splited
-        //console.log(req)
+        req.body.services = servSplited
+        req.body.address = adres
         await Restaurant.create(req.body)
         //console.log(req.body)
         res.redirect('/admin')
-    } catch (error) {
+    } catch (err) {
         console.error(err)
         res.render('error/500')
     }

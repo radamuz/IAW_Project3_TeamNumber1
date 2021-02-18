@@ -1,16 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
-<<<<<<< HEAD
-const User = require('../models/User')
-const { ensureAuth, ensureGuest } = require('../middelware/auth')
-=======
 const Images = require('../models/User')
 const {
     ensureAuth,
     ensureGuest
 } = require('../middelware/auth')
->>>>>>> d3292139a06afdffaae5393f6f50f4ad533ba4d3
 
 //@desc Home Page
 //@route get /
@@ -50,14 +45,6 @@ router.get('/', async (req, res) => {
 
 })
 
-<<<<<<< HEAD
-router.get('/about', async (req, res) => {
-    try {
-        const r = await User.find({}).lean()
-        console.log(r)
-        res.render('about', {
-            r
-=======
 //@desc About Page
 //@route get /about
 router.get('/about', async (req, res) => {
@@ -66,18 +53,11 @@ router.get('/about', async (req, res) => {
         const imagesArray = await Images.find({ admin:true }).lean()
         res.render('about', {
             imagesArray
->>>>>>> d3292139a06afdffaae5393f6f50f4ad533ba4d3
         })
     } catch (error) {
         console.error(error)
         res.render('error/500')
     }
-<<<<<<< HEAD
-
-
-    
-=======
->>>>>>> d3292139a06afdffaae5393f6f50f4ad533ba4d3
 })
 
 //@desc Contact Page
