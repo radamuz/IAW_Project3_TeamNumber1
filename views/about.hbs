@@ -3,12 +3,15 @@
 <h4>We are the best Restaurant Guide in the world</h4>
 
 <h5>History</h5>
-<p>YankeesFork was born in the year 2021, we are a team of developers that are constantly growing. We have created this app to help people find the best restaurant in their area so that they can enjoy the best evening possible.</p>
+<p>YankeesFork was born in the year 2021, we are a team of developers that are constantly growing. We have created this
+    app to help people find the best restaurant in their area so that they can enjoy the best evening possible.</p>
 
 <h5>Mission</h5>
-<p>That our App is useful for all users such as restaurant owners and their potential diners. In our App, restaurant owners can register their restaurant, and publish all kinds of offers so that people can see it.</p>
+<p>That our App is useful for all users such as restaurant owners and their potential diners. In our App, restaurant
+    owners can register their restaurant, and publish all kinds of offers so that people can see it.</p>
 
 <h5>Our values</h5>
+<<<<<<< HEAD
 <p class="margin-bottom">Transparency, Honesty, Consistency, Freedom, Punctuality in service, Excellence, Adaptability, Diligence, Constancy, Justice, Closeness</p>
     <div class="row">
         {{#each r}}
@@ -30,3 +33,26 @@
   </div>
 
 
+=======
+<p>Transparency, Honesty, Consistency, Freedom, Punctuality in service, Excellence, Adaptability,
+    Diligence, Constancy, Justice, Closeness</p>
+
+<h5>Our team</h5>
+<div class="row margin-bottom">
+    {{#each imagesArray}}
+    <div class="col s12 m7" style="width: 33%;">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{image}}">
+            </div>
+            <div id="a" class="card-title center">
+                <p>{{displayName}}</p>
+            </div>
+            <div id="b" class="card-action center">
+                <a target="_blank" href="{{linkedIn}}" >LinkedIn</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+>>>>>>> d3292139a06afdffaae5393f6f50f4ad533ba4d3

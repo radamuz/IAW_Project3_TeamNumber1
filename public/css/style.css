@@ -108,3 +108,12 @@
 .login-container p {
     margin: 10px 0 !important;
 }
+
+#a p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#b a {
+    margin-right: 0px;
+}

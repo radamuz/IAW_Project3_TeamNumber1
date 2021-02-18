@@ -10,3 +10,7 @@ db.restaurants.aggregate([
 ])
 ```
 
+* The query that we have used in mongoDB to obtain our images is the following:
+```js
+db.users.find({},{_id:0, image:1})
+```
