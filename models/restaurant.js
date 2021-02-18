@@ -9,6 +9,14 @@ const RestaurantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  price: {
+    type: String,
+    required: true,
+  },
+  foods: {
+    type: Array,
+    required: true,
+  },
   category: {
     type: String,
     require: true,

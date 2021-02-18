@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
+const User = require('../models/User')
 const { ensureAuth, ensureGuest } = require('../middelware/auth')
 
 //@desc Home Page
@@ -39,10 +40,20 @@ router.get('/', async (req, res) => {
     
 })
 
-//@desc About Page
-//@route get /about
-router.get('/about', (req, res) => {
-    res.render('about')
+router.get('/about', async (req, res) => {
+    try {
+        const r = await User.find({}).lean()
+        console.log(r)
+        res.render('about', {
+            r
+        })
+    } catch (error) {
+        console.error(error)
+        res.render('error/500')
+    }
+
+
+    
 })
 
 //@desc Contact Page
