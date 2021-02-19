@@ -23,15 +23,19 @@ const RestaurantSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    require: true,
+    required: true,
   },
   address: {
     type: Object,
-    require: true,
+    required: true,
   },
   comments: {
     type: Array,
     default: []
+  },
+  img: {
+    type: String,
+    required: true
   }
 })
 
