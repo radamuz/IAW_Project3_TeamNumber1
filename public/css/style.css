@@ -9,6 +9,10 @@
     height: 500px;
 }
 
+.imgAbout{
+    width: 33.333333% !important;
+}
+
 .contact {
     margin-top: 20px;
 }

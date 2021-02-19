@@ -22,6 +22,10 @@ connectDB()
 
 const app = express();
 
+//Body parser
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
+
 // Logging
 if(process.env.NODE_ENV ==='development'){
     app.use(morgan('dev'))
@@ -51,6 +55,8 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
+
+
 // Set global var
 app.use(function (req, res, next) {
   res.locals.user = req.user || null
@@ -60,5 +66,6 @@ app.use(function (req, res, next) {
 //Routes
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
+app.use('/restaurants', require('./routes/restaurants'))
 
 app.listen(PORT, () => console.log(`Server started on http://localhost:${PORT} and running in ${process.env.NODE_ENV} mode`));
