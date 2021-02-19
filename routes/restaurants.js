@@ -26,7 +26,7 @@ router.post('/', ensureAuth, async (req, res) => {
         req.body.foods = splited
         req.body.services = servSplited
         req.body.address = adres
-        await Restaurant.create()
+        await Restaurant.create(req.body)
         res.redirect('/admin')
     } catch (err) {
         console.error(err)
