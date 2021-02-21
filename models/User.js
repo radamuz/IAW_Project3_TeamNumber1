@@ -22,8 +22,16 @@ const UserSchema = new mongoose.Schema({
         required: false
     },
     image: {
-        type: String,
-        required: true
+        type: Object,
+        required: false
+    },
+    img: {
+        type: Object,
+        required: false
+    },
+    files: {
+        type: Object,
+        required: false
     },
     createdAt: {
         type: Date,

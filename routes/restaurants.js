@@ -1,8 +1,11 @@
+const fileUpload = require('express-fileupload')
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
 const User = require('../models/User')
 const { ensureAuth, ensureGuest  } = require('../middelware/auth')
+router.use(fileUpload())
+
 
 //@desc Show Add page
 //@route get /restaurants/add
@@ -26,6 +29,9 @@ router.post('/', ensureAuth, async (req, res) => {
         req.body.foods = splited
         req.body.services = servSplited
         req.body.address = adres
+
+        console.log(req);
+
         await Restaurant.create(req.body)
         res.redirect('/admin')
     } catch (err) {
