@@ -37,7 +37,6 @@ router.get('/', async (req, res) => {
             }
         }])
 
-        console.log(restaurants);
 
         // Put that they have no customer rating yet
         for (let i = 0; i < restaurants.length; i++) {
