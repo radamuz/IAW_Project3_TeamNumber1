@@ -18,9 +18,9 @@ router.get('/add', ensureAuth, (req, res) => {
 router.post('/', ensureAuth, async (req, res) => {
     try {
         const foodsArray = req.body.foods
-        const splited = foodsArray.split(', ')
+        const splited = foodsArray.split(/[,][\s]|[,]/)
         const serv = req.body.services
-        const servSplited = serv.split(', ')
+        const servSplited = serv.split(/[,][\s]|[,]/)
         const adres = new Object()
         adres.addressLocality = req.body.addressLocality
         adres.addressRegion = req.body.addressRegion
