@@ -30,7 +30,21 @@ router.post('/', ensureAuth, async (req, res) => {
         req.body.services = servSplited
         req.body.address = adres
 
-        console.log(req);
+
+        // Upload a image
+        // console.log(req);
+        let EDFile = req.files.img
+        EDFile.mv(`./public/img/${EDFile.name}`,err => {
+            if(err) 
+            console.log('ERROR 200 or 500 uploading image');
+            // console.log(res.status(500))
+            // console.log(res.status(200))
+        })
+
+        req.body.img = `img/${EDFile.name}`
+
+
+
 
         await Restaurant.create(req.body)
         res.redirect('/admin')
