@@ -1,8 +1,13 @@
+const fileUpload = require('express-fileupload')
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
 const User = require('../models/User')
+const mongoose = require('mongoose')
+const ObjectId = mongoose.Types.ObjectId
 const { ensureAuth, ensureGuest  } = require('../middelware/auth')
+router.use(fileUpload())
+
 
 //@desc Show Add page
 //@route get /restaurants/add
@@ -10,14 +15,15 @@ router.get('/add', ensureAuth, (req, res) => {
     res.render('restaurants/add')
 })
 
+
 //@desc Process add form
 //@route POST /restaurants
 router.post('/', ensureAuth, async (req, res) => {
     try {
         const foodsArray = req.body.foods
-        const splited = foodsArray.split(', ')
+        const splited = foodsArray.split(/[,][\s]|[,]/)
         const serv = req.body.services
-        const servSplited = serv.split(', ')
+        const servSplited = serv.split(/[,][\s]|[,]/)
         const adres = new Object()
         adres.addressLocality = req.body.addressLocality
         adres.addressRegion = req.body.addressRegion
@@ -26,6 +32,23 @@ router.post('/', ensureAuth, async (req, res) => {
         req.body.foods = splited
         req.body.services = servSplited
         req.body.address = adres
+<<<<<<< HEAD
+=======
+
+
+        // Upload a image
+        // console.log(req);
+        let EDFile = req.files.img
+        EDFile.mv(`./public/img/${EDFile.name}`,err => {
+            if(err) 
+            console.log('ERROR 200 or 500 uploading image')
+            // console.log(res.status(500))
+            // console.log(res.status(200))
+        })
+
+        req.body.img = `img/${EDFile.name}`
+
+>>>>>>> 3972511a52839c00ae5b209472f0aa812bc737d8
         await Restaurant.create(req.body)
         res.redirect('/admin')
     } catch (err) {
@@ -33,4 +56,45 @@ router.post('/', ensureAuth, async (req, res) => {
         res.render('error/500')
     }
 })
+
+
+//@desc Show single restaurant
+//@route get /restaurants/:id
+router.get('/:id', async (req, res) => {
+    try {
+        let singleRest = await Restaurant.findById(req.params.id)
+            .lean()
+
+        let singleRestStars = await Restaurant.aggregate([{
+            $project: {
+                stars: {
+                    $avg: "$comments.stars"
+                }
+            }
+        }, {
+            $match: {
+                _id: ObjectId(req.params.id)
+            }
+        }])
+
+        singleRestStars0 = singleRestStars[0].stars
+
+        console.log(singleRestStars0)
+
+        if (!singleRest) {
+            return res.render('error/404')
+        }
+
+        res.render('restaurants/show', {
+            singleRestStars0,
+            singleRest,
+            layout: 'singleRest'
+        })
+    } catch (err) {
+        console.error(err)
+        res.render('error/404')
+    }
+})
+
+
 module.exports = router

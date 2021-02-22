@@ -3,11 +3,13 @@
 {{#each restaurants}}
 <div class="card sticky-action">
   <div class="card-image waves-effect waves-block waves-light">
-    <img class="img" src={{img}}>
+    <a href="/restaurants/{{_id}}">
+      <img class="img" src="{{img}}">
+    </a>
   </div>
   <div class="card-action">
     <span class="card-title activator grey-text text-darken-4">{{name}}<i class="right">More info</i></span>
-    <p><a href="https://www.yankeesshop.team">This is a link</a></p>
+    {{!-- <p><a href="/restaurants/{{_id}}">This is a link</a></p> --}}
   </div>
   <div class="card-reveal">
     <span class="card-title grey-text text-darken-4">{{name}}<i class="right">close</i></span>

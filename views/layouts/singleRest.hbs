@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>YankeesFork</title>
+    <link rel="icon" type="image/png" href="/img/logo.png">
+</head>
+<body>
+    {{>_header}}
+
+    {{{body}}}
+
+    {{>_footer}}
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        M.Sidenav.init(document.querySelector('.sidenav'), {edge:'right'})
+
+        document.addEventListener('DOMContentLoaded', function() {
+         var elems = document.querySelectorAll('.parallax');
+           var instances = M.Parallax.init(elems);
+          
+        });
+
+        var myNavigator = document.getElementById('navigator');
+        myNavigator.style.height = '75px';
+
+        var myTitle = document.getElementById('title')
+        myTitle.style.paddingTop = '5px'
+
+        var mySideBut = document.getElementById('sideBut')
+        mySideBut.style.paddingTop = '5px'
+
+    </script>
+</body>
+</html>

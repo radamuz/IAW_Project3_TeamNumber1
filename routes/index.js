@@ -11,30 +11,44 @@ const {
 //@route get /
 router.get('/', async (req, res) => {
     try {
-        const restaurants = await Restaurant.find().sort({
-            forks: -1
-        }).limit(5).lean()
+        // const restaurants = await Restaurant.find().sort({
+        //     forks: -1
+        // }).limit(5).lean()
 
-        const avgComments = await Restaurant.aggregate([{
+        const restaurants = await Restaurant.aggregate([{
             $project: {
+                name: 1,
+                forks: 1,
+                img: 1,
+                phone: 1,
+                price: 1,
+                foods: 1,
+                services: 1,
+                category: 1,
+                address: 1,
+                comments: 1,
                 stars: {
                     $avg: "$comments.stars"
                 }
             }
+        }, {
+            $sort: {
+                forks: -1
+            }
         }])
 
-        // Enter average comments in each of the restaurants
+
+        // Put that they have no customer rating yet
         for (let i = 0; i < restaurants.length; i++) {
-            const forRestaurant = restaurants[i];
-
-            const forAvgComment = avgComments[i]
-
-            forRestaurant.stars = forAvgComment.stars
+            const forRestaurant = restaurants[i]
+            
+            if (forRestaurant.comments == 0) {
+                forRestaurant.stars = 'No customer feedback yet'
+            } 
         }
 
         res.render('home', {
-            restaurants,
-            avgComments
+            restaurants
         })
     } catch (error) {
         console.error(error)
@@ -50,9 +64,11 @@ router.get('/', async (req, res) => {
 router.get('/about', async (req, res) => {
 
     try {
-        const imagesArray = await Images.find({ admin:true }).lean()
+        const aboutUs = await Images.find({
+            admin: true
+        }).lean()
         res.render('about', {
-            imagesArray
+            aboutUs
         })
     } catch (error) {
         console.error(error)
