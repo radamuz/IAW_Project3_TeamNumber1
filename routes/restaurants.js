@@ -32,8 +32,6 @@ router.post('/', ensureAuth, async (req, res) => {
         req.body.foods = splited
         req.body.services = servSplited
         req.body.address = adres
-<<<<<<< HEAD
-=======
 
 
         // Upload a image
@@ -48,7 +46,6 @@ router.post('/', ensureAuth, async (req, res) => {
 
         req.body.img = `img/${EDFile.name}`
 
->>>>>>> 3972511a52839c00ae5b209472f0aa812bc737d8
         await Restaurant.create(req.body)
         res.redirect('/admin')
     } catch (err) {
