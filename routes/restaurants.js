@@ -3,6 +3,8 @@ const express = require('express')
 const router = express.Router()
 const Restaurant = require('../models/restaurant')
 const User = require('../models/User')
+const mongoose = require('mongoose')
+const ObjectId = mongoose.Types.ObjectId
 const { ensureAuth, ensureGuest  } = require('../middelware/auth')
 router.use(fileUpload())
 
@@ -12,6 +14,7 @@ router.use(fileUpload())
 router.get('/add', ensureAuth, (req, res) => {
     res.render('restaurants/add')
 })
+
 
 //@desc Process add form
 //@route POST /restaurants
@@ -36,15 +39,12 @@ router.post('/', ensureAuth, async (req, res) => {
         let EDFile = req.files.img
         EDFile.mv(`./public/img/${EDFile.name}`,err => {
             if(err) 
-            console.log('ERROR 200 or 500 uploading image');
+            console.log('ERROR 200 or 500 uploading image')
             // console.log(res.status(500))
             // console.log(res.status(200))
         })
 
         req.body.img = `img/${EDFile.name}`
-
-
-
 
         await Restaurant.create(req.body)
         res.redirect('/admin')
@@ -53,4 +53,45 @@ router.post('/', ensureAuth, async (req, res) => {
         res.render('error/500')
     }
 })
+
+
+//@desc Show single restaurant
+//@route get /restaurants/:id
+router.get('/:id', async (req, res) => {
+    try {
+        let singleRest = await Restaurant.findById(req.params.id)
+            .lean()
+
+        let singleRestStars = await Restaurant.aggregate([{
+            $project: {
+                stars: {
+                    $avg: "$comments.stars"
+                }
+            }
+        }, {
+            $match: {
+                _id: ObjectId(req.params.id)
+            }
+        }])
+
+        singleRestStars0 = singleRestStars[0].stars
+
+        console.log(singleRestStars0)
+
+        if (!singleRest) {
+            return res.render('error/404')
+        }
+
+        res.render('restaurants/show', {
+            singleRestStars0,
+            singleRest,
+            layout: 'singleRest'
+        })
+    } catch (err) {
+        console.error(err)
+        res.render('error/404')
+    }
+})
+
+
 module.exports = router
