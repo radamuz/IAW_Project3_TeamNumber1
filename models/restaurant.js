@@ -9,6 +9,10 @@ const RestaurantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  phone: {
+    type: String,
+    required: true,
+  },
   price: {
     type: String,
     required: true,
@@ -35,7 +39,7 @@ const RestaurantSchema = new mongoose.Schema({
   },
   img: {
     type: String,
-    required: true
+    required: false
   }
 })
 

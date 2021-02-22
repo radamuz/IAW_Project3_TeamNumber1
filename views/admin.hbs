@@ -1,3 +1,26 @@
 
 <h3>Backend</h3>
-
+<table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Price Index</th>
+              <th>Clients Average</th>
+              <th>Phone</th>
+          </tr>
+        </thead>
+        {{#each restaurants}}
+        <tbody>
+          <tr>
+            <td>{{name}}</td>
+            <td>{{address.streetAddress}}</td>
+            <td>{{price}}</td>
+            <td>{{stars}}</td>
+            <td>{{phone}}</td>
+          </tr>
+          
+        </tbody>
+        {{/each }}
+      </table>
+      

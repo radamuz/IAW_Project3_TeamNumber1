@@ -69,6 +69,9 @@ router.get('/contact', (req, res) => {
 //@desc Login Page
 //@route get /login
 router.get('/login', ensureGuest, (req, res) => {
+    
+    
+    
     res.render('login', {
         layout: 'login'
     })
@@ -77,10 +80,39 @@ router.get('/login', ensureGuest, (req, res) => {
 
 //@desc Admin Page
 //@route get /admin
-router.get('/admin', ensureAuth, (req, res) => {
-    res.render('admin', {
-        layout: 'admin'
-    })
+router.get('/admin', ensureAuth, async (req, res) => {
+
+    try {
+        const restaurants = await Restaurant.find().sort({
+            forks: -1
+        }).lean()
+
+        const avgComments = await Restaurant.aggregate([{
+            $project: {
+                stars: {
+                    $avg: "$comments.stars"
+                }
+            }
+        }])
+
+        // Enter average comments in each of the restaurants
+        for (let i = 0; i < restaurants.length; i++) {
+            const forRestaurant = restaurants[i];
+
+            const forAvgComment = avgComments[i]
+
+            forRestaurant.stars = forAvgComment.stars
+        }
+
+        res.render('admin', {
+            restaurants,
+            avgComments,
+            layout: 'admin'
+        })
+    } catch (error) {
+        
+    }
+
 })
 
 
