@@ -48,7 +48,11 @@ db.restaurants.insertMany([{
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
+<<<<<<< HEAD
             postalCode: '07004',
+=======
+            postalCode: '7004',
+>>>>>>> c11053294ed1f877c87c02d3bfd976cdf1c61d2c
             streetAddress: "Carrer Francesc Alzamora, 198, Baixos Esquerra"
         },
         comments: [{
