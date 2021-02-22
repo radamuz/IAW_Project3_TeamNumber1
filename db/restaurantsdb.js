@@ -37,7 +37,7 @@ db.users.insertMany([{
 
 db.restaurants.insertMany([{
         name: 'Hostelería Dromedarios',
-        forks: '5',
+        forks: 5,
         img: 'img/dromedario-rest.jpg',
         phone: '658452399',
         price: '€€€',
@@ -48,7 +48,7 @@ db.restaurants.insertMany([{
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
-            postalCode: 7004,
+            postalCode: '7004',
             streetAddress: "Carrer Francesc Alzamora, 198, Baixos Esquerra"
         },
         comments: [{
@@ -67,7 +67,7 @@ db.restaurants.insertMany([{
     },
     {
         name: 'La Casa del Goloso',
-        forks: '4',
+        forks: 4,
         img: 'img/goloso.jpg',
         phone: '658411355',
         price: '€€',
@@ -78,7 +78,7 @@ db.restaurants.insertMany([{
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
-            postalCode: 07014,
+            postalCode: '07014',
             streetAddress: "Carrer de Caracas, 6A, 07007 Palma, Illes Balears"
         },
         comments: [{
@@ -97,7 +97,7 @@ db.restaurants.insertMany([{
     },
     {
         name: 'La Pescaderia',
-        forks: '5',
+        forks: 5,
         img: 'img/pescado.jpg',
         phone: '123456789',
         price: '€€€€€',
@@ -108,7 +108,7 @@ db.restaurants.insertMany([{
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
-            postalCode: 07016,
+            postalCode: '07016',
             streetAddress: "Andrea Doria, 6A, 07016 Palma, Illes Balears"
         },
         comments: [{
@@ -127,7 +127,7 @@ db.restaurants.insertMany([{
     },
     {
         name: 'El Paraíso de los Carnívoros',
-        forks: '5',
+        forks: 5,
         img: 'img/carne.jpg',
         phone: '987654321',
         price: '€€€€',
@@ -138,7 +138,7 @@ db.restaurants.insertMany([{
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
-            postalCode: 07016,
+            postalCode: '07016',
             streetAddress: "Andrea Doria, 6A, 07016 Palma, Illes Balears"
         },
         comments: [{
@@ -157,7 +157,7 @@ db.restaurants.insertMany([{
     },
     {
         name: 'Desayunos Saludables',
-        forks: '3',
+        forks: 3,
         img: 'img/saludables.jpg',
         phone: '111111111',
         price: '€€',
