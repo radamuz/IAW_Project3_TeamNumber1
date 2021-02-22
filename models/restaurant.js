@@ -6,7 +6,7 @@ const RestaurantSchema = new mongoose.Schema({
     required: true,
   },
   forks: {
-    type: String,
+    type: Number,
     required: true,
   },
   phone: {
