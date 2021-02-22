@@ -44,6 +44,7 @@ db.restaurants.insertMany([{
         foods: ['ensalada cesar', 'spaguetis carbonara', 'pescaíto frito', 'kebab', 'tostadas'],
         services: ['baños', 'bolos'],
         category: 'hostelry',
+        loc: [39.90592127817853, 3.0786250966819395],
         address: {
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
@@ -74,6 +75,7 @@ db.restaurants.insertMany([{
         foods: ['Creppes', 'Gofres', 'Tartas', 'Donetes', 'tostadas'],
         services: ['baños'],
         category: 'hostelry',
+        loc: [39.33081459043337, 3.146750571786334],
         address: {
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
@@ -104,6 +106,7 @@ db.restaurants.insertMany([{
         foods: ['Salmón', 'Cap Roig', 'Cabiar', 'Dorada', 'Bacalao'],
         services: ['baños', 'Salón para descansar'],
         category: 'hostelry',
+        loc: [39.31986983455744, 2.991534975553383],
         address: {
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
@@ -134,6 +137,7 @@ db.restaurants.insertMany([{
         foods: ['Ternera', 'Carne de vaca', 'Vacuno', 'Pollo'],
         services: ['baños'],
         category: 'hostelry',
+        loc: [39.981687827865876, 4.011504081319818],
         address: {
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
@@ -164,6 +168,7 @@ db.restaurants.insertMany([{
         foods: ['Tostadas', 'Cafés', 'Batidos', 'Infusiones'],
         services: ['baños'],
         category: 'hostelry',
+        loc: [39.21584166142873, 9.113481893253752],
         address: {
             type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',

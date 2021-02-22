@@ -16,7 +16,7 @@
         <h2 class="header">Parallax</h2>
         <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this
             case, is moved at a different speed than the foreground content while scrolling.</p>
-        <p>{{singleRest.loc}}</p>
+        <p></p>
     </div>
     <div class="container">
         <div id="map" class="center">
@@ -34,8 +34,8 @@
 
     function initMap() {
         const myLatLng = {
-            lat: 39.556343,
-            lng: 2.716296
+            lat: {{singleRest.loc.[0]}},
+            lng: {{singleRest.loc.[1]}}
         };
         const map = new google.maps.Map(document.getElementById("map"), {
             zoom: 17,
@@ -44,7 +44,7 @@
         new google.maps.Marker({
             position: myLatLng,
             map,
-            title: "Hello World!",
+            title: "{{singleRest.name}}",
         });
     }
 </script>
