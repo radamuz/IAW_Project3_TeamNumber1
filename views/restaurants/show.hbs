@@ -14,17 +14,38 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 white-text">
-                    <h2 id="sRestTit" class="black-text z-depth-5">Parallax Template</h2>
+                    <h2 id="sRestTit" class="black-text z-depth-5">{{singleRest.name}}</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="section white">
-    <div class="row container">
-        <h2 class="header">Parallax</h2>
-        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-        <p></p>
+    <div class="row">
+        <div class="container">
+            <div class="col s4">
+                <div class="center promo promo-example">
+                    <i class="fas fa-map-marked-alt fa-5x"></i>
+                    <h5 class="promo-caption">Location</h5>
+                    <p class="light center">{{singleRest.address.streetAddress}}, {{singleRest.address.postalCode}}<br/>{{singleRest.address.addressLocality}}<br/>{{singleRest.address.addressRegion}}</p>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="center promo promo-example">
+                    <i class="fas fa-envelope-square fa-5x"></i>
+                    <h5 class="promo-caption">Contact</h5>
+                    <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="center promo promo-example">
+                    <i class="material-icons">settings</i>
+                    <h5 class="promo-caption">Easy to work with</h5>
+                    <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="container">
         <div id="map" class="center">
