@@ -43,7 +43,7 @@ db.restaurants.insertMany([{
         email: 'restaurante@dromedarios.es',
         web: 'www.dromedarios.es',
         price: '€€€',
-        foods: ['ensalada cesar', 'spaguetis carbonara', 'pescaíto frito', 'kebab', 'tostadas'],
+        foods: ['Ensalada cesar', 'Spaguetis carbonara', 'Pescaíto frito', 'Kebab', 'Tostadas'],
         services: ['baños', 'bolos'],
         category: 'hostelry',
         address: {
