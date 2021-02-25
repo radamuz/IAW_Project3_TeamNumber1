@@ -44,25 +44,24 @@ db.restaurants.insertMany([{
         foods: ['ensalada cesar', 'spaguetis carbonara', 'pescaíto frito', 'kebab', 'tostadas'],
         services: ['baños', 'bolos'],
         category: 'hostelry',
-        loc: [39.90592127817853, 3.0786250966819395],
         address: {
-            type: 'PostalAddress',
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
             postalCode: '07004',
+            loc: [39.90592127817853, 3.0786250966819395],
             streetAddress: "Carrer Francesc Alzamora, 198, Baixos Esquerra"
         },
         comments: [{
                 author: 'Matías Prats',
                 comment: 'Gran restaurante, mejores kebabs',
                 stars: 5,
-                date: Date()
+                date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
                 author: 'David Broncano',
                 comment: 'Me flipan los Kebabs estos moros son la ostia',
                 stars: 4,
-                date: 'Fri Feb 05 2021 23:30:26 GMT+0000 (UTC)'
+                date: ISODate('2021-02-10T11:47:32.058Z')
             }
         ]
     },
@@ -75,9 +74,8 @@ db.restaurants.insertMany([{
         foods: ['Creppes', 'Gofres', 'Tartas', 'Donetes', 'tostadas'],
         services: ['baños'],
         category: 'hostelry',
-        loc: [39.33081459043337, 3.146750571786334],
         address: {
-            type: 'PostalAddress',
+            loc: [39.33081459043337, 3.146750571786334],
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
             postalCode: '07014',
@@ -87,13 +85,13 @@ db.restaurants.insertMany([{
                 author: 'Susana Grisón',
                 comment: 'El mejor restaurante para comidas poco saludables',
                 stars: 5,
-                date: Date()
+                date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
                 author: 'Lucía La Piedra',
                 comment: 'El mejor restaurante para comidas poco saludables',
                 stars: 2,
-                date: 'Fri Feb 05 2021 23:30:26 GMT+0000 (UTC)'
+                date: ISODate('2021-02-10T11:47:32.058Z')
             }
         ]
     },
@@ -106,9 +104,8 @@ db.restaurants.insertMany([{
         foods: ['Salmón', 'Cap Roig', 'Cabiar', 'Dorada', 'Bacalao'],
         services: ['baños', 'Salón para descansar'],
         category: 'hostelry',
-        loc: [39.31986983455744, 2.991534975553383],
         address: {
-            type: 'PostalAddress',
+            loc: [39.31986983455744, 2.991534975553383],
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
             postalCode: '07016',
@@ -118,13 +115,13 @@ db.restaurants.insertMany([{
                 author: 'Monolo Lama',
                 comment: 'El gourmet del pescado está aquí',
                 stars: 5,
-                date: Date()
+                date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
                 author: 'Paco Tomás',
                 comment: 'La comida es buena, pero el servicio puede mejorar...',
                 stars: 2,
-                date: 'Fri Feb 05 2021 23:30:26 GMT+0000 (UTC)'
+                date: ISODate('2021-02-10T11:47:32.058Z')
             }
         ]
     },
@@ -137,9 +134,8 @@ db.restaurants.insertMany([{
         foods: ['Ternera', 'Carne de vaca', 'Vacuno', 'Pollo'],
         services: ['baños'],
         category: 'hostelry',
-        loc: [39.981687827865876, 4.011504081319818],
         address: {
-            type: 'PostalAddress',
+            loc: [39.981687827865876, 4.011504081319818],
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
             postalCode: '07016',
@@ -149,13 +145,13 @@ db.restaurants.insertMany([{
                 author: 'Ricardo Castella',
                 comment: 'Si te gusta la carne, es el mejor restaurante de carne de la ciudad',
                 stars: 5,
-                date: Date()
+                date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
                 author: 'Jorge Ponce',
                 comment: 'Es decente....',
                 stars: 3,
-                date: Date()
+                date: ISODate('2021-02-10T11:47:32.058Z')
             }
         ]
     },
@@ -168,9 +164,8 @@ db.restaurants.insertMany([{
         foods: ['Tostadas', 'Cafés', 'Batidos', 'Infusiones'],
         services: ['baños'],
         category: 'hostelry',
-        loc: [39.21584166142873, 9.113481893253752],
         address: {
-            type: 'PostalAddress',
+            loc: [39.21584166142873, 9.113481893253752],
             addressLocality: 'Palma de Mallorca',
             addressRegion: 'Islas Baleres',
             postalCode: '07018',
@@ -180,13 +175,13 @@ db.restaurants.insertMany([{
                 author: 'Juan Manuel',
                 comment: 'El mejor restaurante para desayuna, con buenas vistas',
                 stars: 3,
-                date: Date()
+                date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
                 author: 'Jaume Lopez',
                 comment: 'Sitio agradable y familiar',
                 stars: 4,
-                date: Date()
+                date: ISODate('2021-02-10T11:47:32.058Z')
             }
         ]
     }
