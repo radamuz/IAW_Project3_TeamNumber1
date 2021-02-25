@@ -23,14 +23,14 @@
 <div class="section white">
     <div class="row">
         <div class="container">
-            <div class="col s4">
+            <div class="col s12 l4">
                 <div class="center promo promo-example">
                     <i class="fas fa-map-marked-alt fa-5x"></i>
                     <h5 class="promo-caption">Location</h5>
                     <p class="light center">{{singleRest.address.streetAddress}}, {{singleRest.address.postalCode}}<br/>{{singleRest.address.addressLocality}}<br/>{{singleRest.address.addressRegion}}</p>
                 </div>
             </div>
-            <div class="col s4">
+            <div class="col s12 l4">
                 <div class="center promo promo-example">
                     <i class="fas fa-envelope-square fa-5x"></i>
                     <h5 class="promo-caption">Contact</h5>
@@ -41,32 +41,11 @@
                     </p>
                 </div>
             </div>
-            <div class="col s4">
+            <div class="col s12 l4">
                 <div class="center promo promo-example">
                     <i class="fas fa-euro-sign fa-5x"></i>
                     <h5 class="promo-caption">Price Index</h5>
                     <p class="light center" id="priceIndex"></p>
-                    <script>
-                    // Price index icons
-                    var str = "{{singleRest.price}}"
-                    for (var i = 0; i < str.length; i++) {
-                        // alert(str.charAt(i));
-                        // document.getElementById('priceIndex').innerHTML = '€'
-                        // var node = document.createElement("IMG");
-                        var node = document.createElement("I");
-                        node.className = "fas fa-euro-sign"    
-                        // node.src = '/img/fork-svgrepo-com.svg'  
-                        // node.style.width = '30px'   
-                        node.style.fontSize = '30px'   
-                        // node.style.color = 'rgb(255,215,0)'       
-                        var textnode = document.createTextNode("");        
-                        node.appendChild(textnode);                           
-                        document.getElementById("priceIndex").appendChild(node);   
-                        document.getElementById("priceIndex").innerHTML += ' ';
-                    }
-                    var of5 = document.createTextNode("/5");   
-                    document.getElementById("priceIndex").appendChild(of5)
-                    </script>
                 </div>
             </div>
         </div>
@@ -83,8 +62,85 @@
     <div class="parallax"><img src="/{{singleRest.img.[1]}}"></div>
 </div>
 
+
+<div class="section white">
+    <div class="row">
+        <div class="container">
+            <div class="col s12 l3 center">
+                <img src="/img/logo.png" alt="Logo of YankeesShop" style="width: 70px;">
+                {{!-- <i class="fas fa-map-marked-alt fa-5x"></i> --}}
+                <h5 class="promo-caption" style="margin-top: 8px;">Rating of YankeesFork</h5>
+                <p class="light center" id="rForks"></p>
+            </div>
+            <div class="col s12 l3 center">
+                <i class="fab fa-angellist fa-5x"></i>
+                <h5 class="promo-caption">Rating of Clients</h5>
+                <p class="light center" id="roc">{{singleRestStars0}}<a id="of5s">/5</a></p>                
+            </div>
+            <div class="col s12 l3 center">
+                <i class="fas fa-map-marked-alt fa-5x"></i>
+                <h5 class="promo-caption">Cuisine Type</h5>
+                <p class="light center">{{singleRest.address.streetAddress}}, {{singleRest.address.postalCode}}<br/>{{singleRest.address.addressLocality}}<br/>{{singleRest.address.addressRegion}}</p>                
+            </div>
+            <div class="col s12 l3 center">
+                <i class="fas fa-map-marked-alt fa-5x"></i>
+                <h5 class="promo-caption">Timetable</h5>
+                <p class="light center">{{singleRest.address.streetAddress}}, {{singleRest.address.postalCode}}<br/>{{singleRest.address.addressLocality}}<br/>{{singleRest.address.addressRegion}}</p>         
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col s12 l4 center" style="margin-top:20px">
+                <i class="fas fa-clock fa-5x"></i>
+                <h5 class="promo-caption">Timetable</h5>  
+            </div>
+            <div class="col s12 l8 center">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Open</th>
+                            <td>12:00</td>
+                            <td>12:00</td>
+                            <td>12:00</td>
+                            <td>12:00</td>
+                            <td>12:00</td>
+                            <td>12:00</td>
+                            <td>12:00</td>
+                        </tr>
+                        <tr>
+                            <th>Close</th>
+                            <td>24:00</td>
+                            <td>24:00</td>
+                            <td>24:00</td>
+                            <td>24:00</td>
+                            <td>24:00</td>
+                            <td>24:00</td>
+                            <td>24:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="section grey lighten-3 center">
-    <img src="/img/logoyankeesfork.png" id="l1">
+    <img class="responsive-img" src="/img/logoyankeesfork.png" id="l1">
 </div>
 
 <script type="text/javascript">
@@ -105,4 +161,38 @@
             title: "{{singleRest.name}}",
         });
     }
+
+    // Price index icons
+    var str = "{{singleRest.price}}"
+    for (let i = 0; i < str.length; i++) {
+        // alert(str.charAt(i));
+        // document.getElementById('priceIndex').innerHTML = '€'
+        // var node = document.createElement("IMG");
+        let node = document.createElement("I");
+        node.className = "fas fa-euro-sign"    
+        // node.src = '/img/fork-svgrepo-com.svg'  
+        // node.style.width = '30px'   
+        node.style.fontSize = '30px'   
+        // node.style.color = 'rgb(255,215,0)'       
+        let textnode = document.createTextNode("");        
+        node.appendChild(textnode);                           
+        document.getElementById("priceIndex").appendChild(node);   
+        document.getElementById("priceIndex").innerHTML += ' ';
+    }
+    var of5 = document.createTextNode("/5");   
+    document.getElementById("priceIndex").appendChild(of5)
+
+    // Rating of YankeesFork
+    var ryk = "{{singleRest.forks}}"
+    for (let i = 0; i < ryk; i++) {
+        let node = document.createElement("IMG");
+        node.src = '/img/fork-svgrepo-com.svg'  
+        node.style.width = '30px'   
+        let textnode = document.createTextNode("");        
+        node.appendChild(textnode);                           
+        document.getElementById("rForks").appendChild(node);   
+    }
+    var of52 = document.createTextNode("/5");   
+    document.getElementById("rForks").appendChild(of52)
+
 </script>
