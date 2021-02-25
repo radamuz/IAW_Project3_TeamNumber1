@@ -43,9 +43,29 @@
             </div>
             <div class="col s4">
                 <div class="center promo promo-example">
-                    <i class="material-icons">settings</i>
-                    <h5 class="promo-caption">Easy to work with</h5>
-                    <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
+                    <i class="fas fa-euro-sign fa-5x"></i>
+                    <h5 class="promo-caption">Price Index</h5>
+                    <p class="light center" id="priceIndex"></p>
+                    <script>
+                    var str = "{{singleRest.price}}"
+                    for (var i = 0; i < str.length; i++) {
+                        // alert(str.charAt(i));
+                        // document.getElementById('priceIndex').innerHTML = '€'
+                        // var node = document.createElement("IMG");
+                        var node = document.createElement("I");
+                        node.className = "fas fa-euro-sign"    
+                        // node.src = '/img/fork-svgrepo-com.svg'  
+                        // node.style.width = '30px'   
+                        node.style.fontSize = '30px'   
+                        // node.style.color = 'rgb(255,215,0)'       
+                        var textnode = document.createTextNode("");        
+                        node.appendChild(textnode);                           
+                        document.getElementById("priceIndex").appendChild(node);   
+                        document.getElementById("priceIndex").innerHTML += ' ';
+                    }
+                    var of5 = document.createTextNode(" /5");   
+                    document.getElementById("priceIndex").appendChild(of5)
+                    </script>
                 </div>
             </div>
         </div>
