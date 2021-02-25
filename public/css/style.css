@@ -118,15 +118,6 @@
     margin-right: 0px;
 }
 
-/* #maps div {
-    text-align:center;
-    width:100%;
-}
-
-#maps iframe{
-    width: 200px;
-  } */
-
 #map {
     display: flex;
     align-items: center;
@@ -136,4 +127,9 @@
     /* position: relative; */
     /* overflow: hidden; */
     margin: 0 auto;
+}
+
+#sRestTit{
+    background-color: rgba(187, 187, 187, 0.767);
+    border-radius: 10px;
 }
