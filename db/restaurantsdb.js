@@ -48,7 +48,7 @@ db.restaurants.insertMany([{
         category: 'hostelry',
         address: {
             addressLocality: 'Palma de Mallorca',
-            addressRegion: 'Islas Baleres',
+            addressRegion: 'Islas Baleares',
             postalCode: '07004',
             loc: [39.90592127817853, 3.0786250966819395],
             streetAddress: "Carrer Francesc Alzamora, 198, Baixos Esquerra"
@@ -81,7 +81,7 @@ db.restaurants.insertMany([{
         address: {
             loc: [39.33081459043337, 3.146750571786334],
             addressLocality: 'Palma de Mallorca',
-            addressRegion: 'Islas Baleres',
+            addressRegion: 'Islas Baleares',
             postalCode: '07014',
             streetAddress: "Carrer de Caracas, 6A, 07007 Palma, Illes Balears"
         },
@@ -113,7 +113,7 @@ db.restaurants.insertMany([{
         address: {
             loc: [39.31986983455744, 2.991534975553383],
             addressLocality: 'Palma de Mallorca',
-            addressRegion: 'Islas Baleres',
+            addressRegion: 'Islas Baleares',
             postalCode: '07016',
             streetAddress: "Andrea Doria, 6A, 07016 Palma, Illes Balears"
         },
@@ -145,7 +145,7 @@ db.restaurants.insertMany([{
         address: {
             loc: [39.981687827865876, 4.011504081319818],
             addressLocality: 'Palma de Mallorca',
-            addressRegion: 'Islas Baleres',
+            addressRegion: 'Islas Baleares',
             postalCode: '07016',
             streetAddress: "Andrea Doria, 6A, 07016 Palma, Illes Balears"
         },
@@ -177,7 +177,7 @@ db.restaurants.insertMany([{
         address: {
             loc: [39.21584166142873, 9.113481893253752],
             addressLocality: 'Palma de Mallorca',
-            addressRegion: 'Islas Baleres',
+            addressRegion: 'Islas Baleares',
             postalCode: '07018',
             streetAddress: "Juan Miró, 6A, 07016 Palma, Illes Balears"
         },

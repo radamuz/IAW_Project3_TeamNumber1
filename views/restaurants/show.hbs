@@ -47,6 +47,7 @@
                     <h5 class="promo-caption">Price Index</h5>
                     <p class="light center" id="priceIndex"></p>
                     <script>
+                    // Price index icons
                     var str = "{{singleRest.price}}"
                     for (var i = 0; i < str.length; i++) {
                         // alert(str.charAt(i));
@@ -63,7 +64,7 @@
                         document.getElementById("priceIndex").appendChild(node);   
                         document.getElementById("priceIndex").innerHTML += ' ';
                     }
-                    var of5 = document.createTextNode(" /5");   
+                    var of5 = document.createTextNode("/5");   
                     document.getElementById("priceIndex").appendChild(of5)
                     </script>
                 </div>
@@ -72,7 +73,7 @@
 
     </div>
     <div class="container">
-        <div id="map" class="center">
+        <div id="map">
 
         </div>
     </div>
@@ -88,6 +89,7 @@
 
 <script type="text/javascript">
 
+    // Location Map
     function initMap() {
         const myLatLng = {
             lat: {{singleRest.address.loc.[0]}},
