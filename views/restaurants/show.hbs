@@ -78,14 +78,16 @@
                 <p class="light center" id="roc">{{singleRestStars0}}<a id="of5s">/5</a></p>                
             </div>
             <div class="col s12 l3 center">
-                <i class="fas fa-map-marked-alt fa-5x"></i>
+                <img src="/img/chef_hat.png" alt="Chef Hat" style="width: 70px;">
                 <h5 class="promo-caption">Cuisine Type</h5>
                 <p class="light center">{{singleRest.address.streetAddress}}, {{singleRest.address.postalCode}}<br/>{{singleRest.address.addressLocality}}<br/>{{singleRest.address.addressRegion}}</p>                
             </div>
             <div class="col s12 l3 center">
-                <i class="fas fa-map-marked-alt fa-5x"></i>
-                <h5 class="promo-caption">Timetable</h5>
-                <p class="light center">{{singleRest.address.streetAddress}}, {{singleRest.address.postalCode}}<br/>{{singleRest.address.addressLocality}}<br/>{{singleRest.address.addressRegion}}</p>         
+                <i class="fas fa-utensils fa-5x"></i>
+                <h5 class="promo-caption">Foods</h5>
+                {{#each singleRest.foods}}
+                <a class="light" style="color: black;">{{this}}</a>    
+                {{/each}}  
             </div>
         </div>
     </div>
