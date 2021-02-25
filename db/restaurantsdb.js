@@ -75,7 +75,7 @@ db.restaurants.insertMany([{
         email: 'casa@goloso.es',
         web: 'www.goloso.es',
         price: '€€',
-        foods: ['Creppes', 'Gofres', 'Tartas', 'Donetes', 'tostadas'],
+        foods: ['Creppes', 'Gofres', 'Tartas', 'Donetes', 'Tostadas'],
         services: ['baños'],
         category: 'hostelry',
         address: {
