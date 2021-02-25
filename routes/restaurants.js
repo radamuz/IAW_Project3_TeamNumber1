@@ -76,8 +76,6 @@ router.get('/:id', async (req, res) => {
 
         singleRestStars0 = singleRestStars[0].stars
 
-        console.log(singleRestStars0)
-
         if (!singleRest) {
             return res.render('error/404')
         }

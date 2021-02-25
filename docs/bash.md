@@ -5,5 +5,5 @@ sudo rm -r mongo_data
 
 * To search for a string throughout the repository we will use the following command:
 ```bash
-grep <stringToSearch> ./* -R --exclude-dir=./mongo_data --exclude-dir=./node_modules
+grep <stringToSearch> ./* -Rn --exclude-dir=./mongo_data --exclude-dir=./node_modules
 ```
