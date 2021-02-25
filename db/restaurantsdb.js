@@ -38,7 +38,7 @@ db.users.insertMany([{
 db.restaurants.insertMany([{
         name: 'Hostelería Dromedarios',
         forks: 5,
-        img: 'img/dromedario-rest.jpg',
+        img: ['img/dromedario-rest.jpg', 'img/dromedario-kebab.jpg'],
         phone: '658452399',
         email: 'restaurante@dromedarios.es',
         web: 'www.dromedarios.es',
@@ -70,7 +70,7 @@ db.restaurants.insertMany([{
     {
         name: 'La Casa del Goloso',
         forks: 4,
-        img: 'img/goloso.jpg',
+        img: ['img/goloso.jpg', 'img/creppes.jpg'],
         phone: '658411355',
         email: 'casa@goloso.es',
         web: 'www.goloso.es',
@@ -102,7 +102,7 @@ db.restaurants.insertMany([{
     {
         name: 'La Pescaderia',
         forks: 5,
-        img: 'img/pescado.jpg',
+        img: ['img/pescado.jpg', 'img/salmon.jpg'],
         phone: '123456789',
         email: 'lapescaderia@google.com',
         web: 'www.lapescaderia.com',
@@ -134,7 +134,7 @@ db.restaurants.insertMany([{
     {
         name: 'El Paraíso de los Carnívoros',
         forks: 5,
-        img: 'img/carne.jpg',
+        img: ['img/carne.jpg', 'img/ternera.jpg'],
         phone: '987654321',
         email: 'paraiso@carnivoros.com',
         web: 'www.carnivoros.com',
@@ -166,7 +166,7 @@ db.restaurants.insertMany([{
     {
         name: 'Desayunos Saludables',
         forks: 3,
-        img: 'img/saludables.jpg',
+        img: ['img/saludables.jpg', 'img/batidos.jpeg'],
         phone: '111111111',
         email: 'saludables@google.com',
         web: 'www.desayunossaludables.com',
