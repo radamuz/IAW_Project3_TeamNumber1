@@ -45,6 +45,15 @@ db.restaurants.insertMany([{
         price: '€€€',
         foods: ['Ensalada cesar', 'Spaguetis carbonara', 'Pescaíto frito', 'Kebab', 'Tostadas'],
         cuisineType: ['Indian', 'Italian', 'Mediterranian'],
+        timetable: [
+            [],
+            [],
+            ['12:00','24:00'],
+            ['12:00','24:00'],
+            ['12:00','24:00'],
+            ['12:00','24:00'],
+            ['12:00','24:00']
+        ],
         services: ['baños', 'bolos'],
         category: 'hostelry',
         address: {
@@ -78,6 +87,15 @@ db.restaurants.insertMany([{
         price: '€€',
         foods: ['Creppes', 'Gofres', 'Tartas', 'Donetes', 'Tostadas'],
         cuisineType: ['French', 'Desserts'],
+        timetable: [
+            ['08:00','13:00'],
+            ['08:00','13:00'],
+            [],
+            ['08:00','13:00'],
+            ['08:00','13:00'],
+            ['08:00','13:00'],
+            ['08:00','13:00']
+        ],
         services: ['baños'],
         category: 'hostelry',
         address: {
@@ -102,7 +120,7 @@ db.restaurants.insertMany([{
         ]
     },
     {
-        name: 'La Pescaderia',
+        name: 'La Pescadería',
         forks: 5,
         img: ['img/pescado.jpg', 'img/salmon.jpg'],
         phone: '123456789',
@@ -111,6 +129,15 @@ db.restaurants.insertMany([{
         price: '€€€€€',
         foods: ['Salmón', 'Cap Roig', 'Cabiar', 'Dorada', 'Bacalao'],
         cuisineType: ['Contemporary', 'Castilian'],
+        timetable: [
+            ['12:30','23:00'],
+            [],
+            ['12:30','23:00'],
+            ['12:30','23:00'],
+            ['12:30','23:00'],
+            ['12:30','23:00'],
+            ['12:30','23:00']
+        ],
         services: ['baños', 'Salón para descansar'],
         category: 'hostelry',
         address: {
@@ -144,6 +171,15 @@ db.restaurants.insertMany([{
         price: '€€€€',
         foods: ['Ternera', 'Carne de vaca', 'Vacuno', 'Pollo'],
         cuisineType: ['Parrillas', 'Street food', 'Asador'],
+        timetable: [
+            ['12:15','23:00'],
+            ['12:15','23:00'],
+            ['12:15','23:00'],
+            ['12:15','23:00'],
+            ['12:15','23:00'],
+            ['12:15','23:00'],
+            ['12:15','23:00']
+        ],
         services: ['baños'],
         category: 'hostelry',
         address: {
@@ -177,6 +213,15 @@ db.restaurants.insertMany([{
         price: '€€',
         foods: ['Tostadas', 'Cafés', 'Batidos', 'Infusiones'],
         cuisineType: ['Creativo', 'De fusión', 'Healthy'],
+        timetable: [
+            ['09:00','13:00'],
+            ['09:00','13:00'],
+            ['09:00','13:00'],
+            ['09:00','13:00'],
+            ['09:00','13:00'],
+            ['09:00','13:00'],
+            ['09:00','13:00']
+        ],
         services: ['baños'],
         category: 'hostelry',
         address: {
