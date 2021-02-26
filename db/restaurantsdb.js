@@ -44,6 +44,7 @@ db.restaurants.insertMany([{
         web: 'www.dromedarios.es',
         price: '€€€',
         foods: ['Ensalada cesar', 'Spaguetis carbonara', 'Pescaíto frito', 'Kebab', 'Tostadas'],
+        cuisineType: ['Indian', 'Italian', 'Mediterranian'],
         services: ['baños', 'bolos'],
         category: 'hostelry',
         address: {
@@ -54,13 +55,13 @@ db.restaurants.insertMany([{
             streetAddress: "Carrer Francesc Alzamora, 198, Baixos Esquerra"
         },
         comments: [{
-                author: 'Matías Prats',
+                author: ObjectId('6023c7d41b1dbb94a6cf6eb7'),
                 comment: 'Gran restaurante, mejores kebabs',
                 stars: 5,
                 date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
-                author: 'David Broncano',
+                author: ObjectId('60269ae67d66ab1f2f4ec27f'),
                 comment: 'Me flipan los Kebabs estos moros son la ostia',
                 stars: 4,
                 date: ISODate('2021-02-10T11:47:32.058Z')
@@ -76,6 +77,7 @@ db.restaurants.insertMany([{
         web: 'www.goloso.es',
         price: '€€',
         foods: ['Creppes', 'Gofres', 'Tartas', 'Donetes', 'Tostadas'],
+        cuisineType: ['French', 'Desserts'],
         services: ['baños'],
         category: 'hostelry',
         address: {
@@ -86,13 +88,13 @@ db.restaurants.insertMany([{
             streetAddress: "Carrer de Caracas, 6A, 07007 Palma, Illes Balears"
         },
         comments: [{
-                author: 'Susana Grisón',
+                author: ObjectId('6023c7d41b1dbb94a6cf6eb7'),
                 comment: 'El mejor restaurante para comidas poco saludables',
                 stars: 5,
                 date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
-                author: 'Lucía La Piedra',
+                author: ObjectId('60269ae67d66ab1f2f4ec27f'),
                 comment: 'El mejor restaurante para comidas poco saludables',
                 stars: 2,
                 date: ISODate('2021-02-10T11:47:32.058Z')
@@ -108,6 +110,7 @@ db.restaurants.insertMany([{
         web: 'www.lapescaderia.com',
         price: '€€€€€',
         foods: ['Salmón', 'Cap Roig', 'Cabiar', 'Dorada', 'Bacalao'],
+        cuisineType: ['Contemporary', 'Castilian'],
         services: ['baños', 'Salón para descansar'],
         category: 'hostelry',
         address: {
@@ -118,13 +121,13 @@ db.restaurants.insertMany([{
             streetAddress: "Andrea Doria, 6A, 07016 Palma, Illes Balears"
         },
         comments: [{
-                author: 'Monolo Lama',
+                author: ObjectId('60269b2b7d66ab1f2f4ec280'),
                 comment: 'El gourmet del pescado está aquí',
                 stars: 5,
                 date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
-                author: 'Paco Tomás',
+                author: ObjectId('6023c7d41b1dbb94a6cf6eb7'),
                 comment: 'La comida es buena, pero el servicio puede mejorar...',
                 stars: 2,
                 date: ISODate('2021-02-10T11:47:32.058Z')
@@ -140,6 +143,7 @@ db.restaurants.insertMany([{
         web: 'www.carnivoros.com',
         price: '€€€€',
         foods: ['Ternera', 'Carne de vaca', 'Vacuno', 'Pollo'],
+        cuisineType: ['Parrillas', 'Street food', 'Asador'],
         services: ['baños'],
         category: 'hostelry',
         address: {
@@ -150,13 +154,13 @@ db.restaurants.insertMany([{
             streetAddress: "Andrea Doria, 6A, 07016 Palma, Illes Balears"
         },
         comments: [{
-                author: 'Ricardo Castella',
+                author: ObjectId('60269ae67d66ab1f2f4ec27f'),
                 comment: 'Si te gusta la carne, es el mejor restaurante de carne de la ciudad',
                 stars: 5,
                 date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
-                author: 'Jorge Ponce',
+                author: ObjectId('60269b2b7d66ab1f2f4ec280'),
                 comment: 'Es decente....',
                 stars: 3,
                 date: ISODate('2021-02-10T11:47:32.058Z')
@@ -172,6 +176,7 @@ db.restaurants.insertMany([{
         web: 'www.desayunossaludables.com',
         price: '€€',
         foods: ['Tostadas', 'Cafés', 'Batidos', 'Infusiones'],
+        cuisineType: ['Creativo', 'De fusión', 'Healthy'],
         services: ['baños'],
         category: 'hostelry',
         address: {
@@ -182,13 +187,13 @@ db.restaurants.insertMany([{
             streetAddress: "Juan Miró, 6A, 07016 Palma, Illes Balears"
         },
         comments: [{
-                author: 'Juan Manuel',
+                author: ObjectId('6023c7d41b1dbb94a6cf6eb7'),
                 comment: 'El mejor restaurante para desayunar, con buenas vistas',
                 stars: 3,
                 date: ISODate('2021-02-10T11:47:32.058Z')
             },
             {
-                author: 'Jaume Lopez',
+                author: ObjectId('60269b2b7d66ab1f2f4ec280'),
                 comment: 'Sitio agradable y familiar',
                 stars: 4,
                 date: ISODate('2021-02-10T11:47:32.058Z')
