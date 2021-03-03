@@ -10,7 +10,7 @@ const RestaurantSchema = new mongoose.Schema({
     required: true
   },
   img: {
-    type: String,
+    type: Array,
     required: false
   },
   phone: {

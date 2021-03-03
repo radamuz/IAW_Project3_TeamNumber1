@@ -20,7 +20,7 @@ router.get('/add', ensureAuth, (req, res) => {
 //@route POST /restaurants
 router.post('/', ensureAuth, async (req, res) => {
     try {
-        console.log(req.body);
+        console.log(req);
         const foodsArray = req.body.foods
         const splited = foodsArray.split(/[,][\s]|[,]/)
         const serv = req.body.services
@@ -38,11 +38,11 @@ router.post('/', ensureAuth, async (req, res) => {
         req.body.foods = splited
         req.body.services = servSplited
         req.body.address = adres
-
+        req.body.cuisineType = cuisineTypeSplited
 
         // Upload a image
         // console.log(req);
-        let EDFile = req.files.img
+        let EDFile = req.files.img1
         EDFile.mv(`./public/img/${EDFile.name}`,err => {
             if(err) 
             console.log('ERROR 200 or 500 uploading image')
@@ -50,7 +50,25 @@ router.post('/', ensureAuth, async (req, res) => {
             // console.log(res.status(200))
         })
 
-        req.body.img = `img/${EDFile.name}`
+        req.body.img1 = `img/${EDFile.name}`
+        
+        // Upload a second image
+        // console.log(req);
+        let EDFile2 = req.files.img2
+        EDFile2.mv(`./public/img/${EDFile2.name}`,err => {
+            if(err) 
+            console.log('ERROR 200 or 500 uploading image')
+            // console.log(res.status(500))
+            // console.log(res.status(200))
+        })
+
+        req.body.img2 = `img/${EDFile2.name}`
+
+        req.body.img = new Array()
+        req.body.img[0] = req.body.img1
+        req.body.img[1] = req.body.img2
+
+
 
         await Restaurant.create(req.body)
         res.redirect('/admin')
