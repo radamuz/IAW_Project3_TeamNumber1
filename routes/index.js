@@ -21,8 +21,12 @@ router.get('/', async (req, res) => {
                 forks: 1,
                 img: 1,
                 phone: 1,
+                email: 1,
+                web: 1,
                 price: 1,
                 foods: 1,
+                cuisineType: 1,
+                timetable: 1,
                 services: 1,
                 category: 1,
                 address: 1,
@@ -35,7 +39,10 @@ router.get('/', async (req, res) => {
             $sort: {
                 forks: -1
             }
-        }])
+        },
+    {
+        $limit: 5
+    }])
 
 
         // Put that they have no customer rating yet
