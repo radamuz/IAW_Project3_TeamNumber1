@@ -7,6 +7,8 @@ const RestaurantSchema = new mongoose.Schema({
   },
   forks: {
     type: Number,
+    min: 0,
+    max: 5,
     required: true
   },
   img: {

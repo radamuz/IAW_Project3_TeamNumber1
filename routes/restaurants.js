@@ -68,7 +68,30 @@ router.post('/', ensureAuth, async (req, res) => {
         req.body.img[0] = req.body.img1
         req.body.img[1] = req.body.img2
 
+        req.body.timetable = new Array()
+        req.body.timetable[0] = new Array()
+        req.body.timetable[0][0] = req.body.timetable00
+        req.body.timetable[0][1] = req.body.timetable01
+        req.body.timetable[1] = new Array()
+        req.body.timetable[1][0] = req.body.timetable10
+        req.body.timetable[1][1] = req.body.timetable11
+        req.body.timetable[2] = new Array()
+        req.body.timetable[2][0] = req.body.timetable20
+        req.body.timetable[2][1] = req.body.timetable21
+        req.body.timetable[3] = new Array()
+        req.body.timetable[3][0] = req.body.timetable30
+        req.body.timetable[3][1] = req.body.timetable31
+        req.body.timetable[4] = new Array()
+        req.body.timetable[4][0] = req.body.timetable40
+        req.body.timetable[4][1] = req.body.timetable41
+        req.body.timetable[5] = new Array()
+        req.body.timetable[5][0] = req.body.timetable50
+        req.body.timetable[5][1] = req.body.timetable51
+        req.body.timetable[6] = new Array()
+        req.body.timetable[6][0] = req.body.timetable60
+        req.body.timetable[6][1] = req.body.timetable61
 
+        console.log(req.body.timetable);
 
         await Restaurant.create(req.body)
         res.redirect('/admin')
