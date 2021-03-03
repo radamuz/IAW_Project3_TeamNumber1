@@ -5,7 +5,7 @@ const Restaurant = require('../models/restaurant')
 const User = require('../models/User')
 const mongoose = require('mongoose')
 const ObjectId = mongoose.Types.ObjectId
-const { ensureAuth, ensureGuest  } = require('../middelware/auth')
+const { ensureAuth, ensureGuest } = require('../middelware/auth')
 router.use(fileUpload())
 
 
@@ -20,15 +20,21 @@ router.get('/add', ensureAuth, (req, res) => {
 //@route POST /restaurants
 router.post('/', ensureAuth, async (req, res) => {
     try {
+        console.log(req.body);
         const foodsArray = req.body.foods
         const splited = foodsArray.split(/[,][\s]|[,]/)
         const serv = req.body.services
         const servSplited = serv.split(/[,][\s]|[,]/)
+        const cuisineType = req.body.cuisineType
+        const cuisineTypeSplited = cuisineType.split(/[,][\s]|[,]/)
         const adres = new Object()
         adres.addressLocality = req.body.addressLocality
         adres.addressRegion = req.body.addressRegion
         adres.postalCode = req.body.postalCode
         adres.streetAddress = req.body.streetAddress
+        adres.loc = new Array()
+        adres.loc[0] = req.body.loc0
+        adres.loc[1] = req.body.loc1
         req.body.foods = splited
         req.body.services = servSplited
         req.body.address = adres

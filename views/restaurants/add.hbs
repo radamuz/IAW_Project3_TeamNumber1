@@ -8,15 +8,33 @@
             </div>
         </div>
         <div class="row">
+                <p for="forks" id="divPgr">Forks</p>
             <div class="input-field">
-                <input type="text" id="forks" name="forks">
-                <label for="forks">Forks</label>
+                <input type="range" min="0" max="5" value="0" id="forks" name="forks"> 
             </div>
+        </div>
+        <div class="row">
+                <label for="img">Select the first image of your restaurant:</label>
+                <input type="file" id="img" name="img">
+                {{!-- <label for="img2">Select the second image of your restaurant:</label>
+                <input type="file" id="img2" name="img2"> --}}
         </div>
         <div class="row">
             <div class="input-field">
                 <input type="text" id="phone" name="phone">
                 <label for="phone">Phone</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="email" id="email" name="email">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="url" id="web" name="web">
+                <label for="web">Web</label>
             </div>
         </div>
         <div class="row">
@@ -31,15 +49,81 @@
                 <label for="price">Price</label>
             </div>
         </div>
-        <textarea name="foods" id="foods" cols="30" rows="10">Foods</textarea>
-        <textarea name="services" id="services" cols="30" rows="10">Services</textarea>
-        <label for="img">Select a Image:</label>
-        <input type="file" id="img" name="img">
+        <div class="row">
+            <div class="input-field">
+                <textarea name="foods" id="foods" cols="30" rows="10"></textarea>
+                <label for="price">Foods</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <textarea name="cuisineType" id="cuisineType" cols="30" rows="10"></textarea>
+                <label for="cuisineType">Cuisine Type</label>
+            </div>
+        </div>
+
+        <div class="col s12 l4 center" style="margin-top:20px">
+                <i class="fas fa-clock fa-5x"></i>
+                <h5 class="promo-caption">Timetable</h5>  
+            </div>
+            <div class="col s12 l8 center">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Open</th>
+                            <td><textarea name="timetable[0][0]" id="timetable[0][0]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[1][0]" id="timetable[1][0]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[2][0]" id="timetable[2][0]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[3][0]" id="timetable[3][0]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[4][0]" id="timetable[4][0]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[5][0]" id="timetable[5][0]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[6][0]" id="timetable[6][0]" cols="1" rows="1"></textarea></td>
+                        </tr>
+                        <tr>
+                            <th>Close</th>
+                            <td><textarea name="timetable[0][1]" id="timetable[0][1]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[1][1]" id="timetable[1][1]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[2][1]" id="timetable[2][1]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[3][1]" id="timetable[3][1]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[4][1]" id="timetable[4][1]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[5][1]" id="timetable[5][1]" cols="1" rows="1"></textarea></td>
+                            <td><textarea name="timetable[6][1]" id="timetable[6][1]" cols="1" rows="1"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="input-field" style="margin-bottom: 0px;">
+                <textarea name="services" id="services" cols="30" rows="10"></textarea>
+                <label for="price">Services</label>
+            </div>
+        </div>
 
         <div class="row">
             <div class="input-field">
-                <input type="text" id="category" name="category">
-                <label for="category">Category</label>
+                <div class="col s12 l6">
+                    <p id="myGCol">Latitude</p>
+                    <textarea name="loc0" id="loc0" cols="1" rows="1"></textarea>
+                </div>
+                <div class="col s12 l6">
+                    <p id="myGCol">Longitude</p>
+                    <textarea name="loc1" id="loc1" cols="1" rows="1"></textarea>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -57,13 +141,13 @@
         <div class="row">
             <div class="input-field">
                 <input type="text" id="postalCode" name="postalCode">
-                <label for="postalCode">PostalCode</label>
+                <label for="postalCode">Postal Code</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field">
                 <input type="text" id="streetAddress" name="streetAddress">
-                <label for="streetAddress">streetAddress</label>
+                <label for="streetAddress">Street Address</label>
             </div>
         </div>
         <div class="row">
