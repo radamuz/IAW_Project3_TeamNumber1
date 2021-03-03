@@ -106,30 +106,35 @@ router.get('/login', ensureGuest, (req, res) => {
 router.get('/admin', ensureAuth, async (req, res) => {
 
     try {
-        const restaurants = await Restaurant.find().sort({
-            forks: -1
-        }).lean()
 
-        const avgComments = await Restaurant.aggregate([{
+        const restaurants2 = await Restaurant.aggregate([{
             $project: {
+                name: 1,
+                forks: 1,
+                img: 1,
+                phone: 1,
+                email: 1,
+                web: 1,
+                price: 1,
+                foods: 1,
+                cuisineType: 1,
+                timetable: 1,
+                services: 1,
+                category: 1,
+                address: 1,
+                comments: 1,
                 stars: {
                     $avg: "$comments.stars"
                 }
             }
+            }, {
+            $sort: {
+                forks: -1
+            }
         }])
 
-        // Enter average comments in each of the restaurants
-        for (let i = 0; i < restaurants.length; i++) {
-            const forRestaurant = restaurants[i];
-
-            const forAvgComment = avgComments[i]
-
-            forRestaurant.stars = forAvgComment.stars
-        }
-
         res.render('admin', {
-            restaurants,
-            avgComments,
+            restaurants2,
             layout: 'admin'
         })
     } catch (error) {
